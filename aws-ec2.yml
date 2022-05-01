@@ -1,0 +1,15 @@
+- hosts: localhost
+  tasks:
+  - name: AWS OS provisioning
+    ec2:
+      key_name: keymlops
+      instance_type: t2.micro
+      image: ami-0ebc1ac48dfd14136
+      wait: yes
+      region: ap-south-1
+      group_id: sg-01a7d863
+      count: 1
+      vpc_subnet_id: subnet-51167d1d
+      assign_public_ip: yes
+      aws_access_key:
+      aws_secret_key: 
